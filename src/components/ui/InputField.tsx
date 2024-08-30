@@ -1,10 +1,10 @@
-import { ReactElement, useContext } from "react";
+import { ReactElement, useContext, Context } from "react";
 import ExpressionContext from "../contexts/ExpressionContext";
 import { DefaultValue } from "../../types";
 
 const InputField = (): ReactElement => {
   const { settings, handleChange, inputRef }: DefaultValue =
-    useContext<DefaultValue>(ExpressionContext);
+    useContext<DefaultValue>(ExpressionContext as Context<DefaultValue>);
 
   return (
     <>

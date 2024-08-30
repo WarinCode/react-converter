@@ -1,11 +1,11 @@
-import { ReactElement, useContext } from "react";
+import { ReactElement, useContext, Context } from "react";
 import { DefaultValue } from "../../types";
 import ExpressionContext from "../contexts/ExpressionContext";
 import ExpressionTypes from "../../github/stack-application/src/enums/ExpressionTypes";
 
 const Select = (): ReactElement<HTMLSelectElement> => {
   const { handleSelect }: DefaultValue =
-    useContext<DefaultValue>(ExpressionContext);
+    useContext<DefaultValue>(ExpressionContext as Context<DefaultValue>);
 
   return (
     <select

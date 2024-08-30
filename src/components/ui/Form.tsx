@@ -1,12 +1,13 @@
-import { ReactElement, useEffect, useContext } from "react";
+import { ReactElement, useEffect, useContext, Context } from "react";
 import { DefaultValue } from "../../types";
 import ExpressionContext from "../contexts/ExpressionContext";
 import InputField from "./InputField";
 import Button from "./Button";
 
 const Form = (): ReactElement<HTMLDivElement> => {
-  const { inputRef }: DefaultValue =
-    useContext<DefaultValue>(ExpressionContext);
+  const { inputRef }: DefaultValue = useContext<DefaultValue>(
+    ExpressionContext as Context<DefaultValue>
+  );
 
   useEffect((): void => {
     inputRef.current.focus();

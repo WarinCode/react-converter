@@ -1,4 +1,4 @@
-import { ReactElement, useContext, FC } from "react";
+import { ReactElement, useContext, FC, Context } from "react";
 import { ResultofExpressionProps } from "../../types/props";
 import ExpressionContext from "../contexts/ExpressionContext";
 import { DefaultValue } from "../../types";
@@ -7,7 +7,7 @@ const ResultofExpression: FC<ResultofExpressionProps<HTMLDivElement>> = ({
   attributes,
 }): ReactElement<HTMLDivElement> => {
   const { result, type }: DefaultValue =
-    useContext<DefaultValue>(ExpressionContext);
+    useContext<DefaultValue>(ExpressionContext as Context<DefaultValue>);
 
   return (
     <div

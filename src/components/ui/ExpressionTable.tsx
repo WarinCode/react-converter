@@ -1,4 +1,4 @@
-import { ReactElement, useContext } from "react";
+import { ReactElement, useContext, Context } from "react";
 import uuid from "react-uuid";
 import { DefaultValue } from "../../types";
 import ExpressionContext from "../contexts/ExpressionContext";
@@ -8,7 +8,7 @@ import TableRow from "./TableRow";
 
 const ExpressionTable = (): ReactElement<HTMLTableElement> => {
   const { type, result, statements }: DefaultValue =
-    useContext<DefaultValue>(ExpressionContext);
+    useContext<DefaultValue>(ExpressionContext as Context<DefaultValue>);
 
   if (result === null) {
     return <table></table>;

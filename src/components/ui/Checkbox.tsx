@@ -1,4 +1,11 @@
-import { ReactElement, FC, useContext, useCallback, ChangeEvent } from "react";
+import {
+  ReactElement,
+  FC,
+  useContext,
+  useCallback,
+  ChangeEvent,
+  Context,
+} from "react";
 import { CheckboxProps } from "../../types/props";
 import { DefaultValue } from "../../types";
 import ExpressionContext from "../contexts/ExpressionContext";
@@ -9,8 +16,15 @@ const Checkbox: FC<CheckboxProps> = ({
   keyName,
   id,
 }): ReactElement<HTMLDivElement> => {
-  const { handleCheck, setSettings, settings, setExpression, inputRef }: DefaultValue =
-    useContext<DefaultValue>(ExpressionContext);
+  const {
+    handleCheck,
+    setSettings,
+    settings,
+    setExpression,
+    inputRef,
+  }: DefaultValue = useContext<DefaultValue>(
+    ExpressionContext as Context<DefaultValue>
+  );
 
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>): void => {
