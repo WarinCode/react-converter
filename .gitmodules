@@ -1,0 +1,3 @@
+[submodule "src/github/stack-application"]
+	path = src/github/stack-application
+	url = https://github.com/WarinCode/stack-application.git
