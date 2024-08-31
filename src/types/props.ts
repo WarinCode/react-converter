@@ -6,7 +6,7 @@ import {
   ButtonHTMLAttributes,
 } from "react";
 import { CheckboxObject } from ".";
-import { ToPostfix, ToPrefix } from "../github/stack-application/src/types";
+import { ToPostfix, ToPrefix } from "../libs/src/types";
 
 interface BaseContainer {
   children: ReactNode;

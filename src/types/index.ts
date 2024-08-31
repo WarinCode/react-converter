@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, ChangeEvent, FormEvent, MutableRefObject } from "react";
-import ExpressionTypes from "../github/stack-application/src/enums/ExpressionTypes";
-import { AppSettings, ToPostfix, ToPrefix } from "../github/stack-application/src/types";
+import ExpressionTypes from "../libs/src/enums/ExpressionTypes";
+import { AppSettings, ToPostfix, ToPrefix } from "../libs/src/types";
 
 export interface DefaultValue {
   expression: string;

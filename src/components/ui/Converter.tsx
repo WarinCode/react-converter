@@ -8,13 +8,13 @@ import {
   useCallback,
   MutableRefObject,
 } from "react";
-import StackApplication from "../../github/stack-application/src/classes/StackApplication";
+import StackApplication from "../../libs/src/classes/StackApplication";
 import {
   AppSettings,
   ToPostfix,
   ToPrefix,
-} from "../../github/stack-application/src/types";
-import ExpressionTypes from "../../github/stack-application/src/enums/ExpressionTypes";
+} from "../../libs/src/types";
+import ExpressionTypes from "../../libs/src/enums/ExpressionTypes";
 import ExpressionContext from "../contexts/ExpressionContext";
 import FormContainer from "../containers/FormContainer";
 import SelectContainer from "../containers/SelectContainer";

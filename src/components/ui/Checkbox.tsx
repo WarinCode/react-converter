@@ -9,7 +9,7 @@ import {
 import { CheckboxProps } from "../../types/props";
 import { DefaultValue } from "../../types";
 import ExpressionContext from "../contexts/ExpressionContext";
-import { AppSettings } from "../../github/stack-application/src/types";
+import { AppSettings } from "../../libs/src/types";
 
 const Checkbox: FC<CheckboxProps> = ({
   text,
