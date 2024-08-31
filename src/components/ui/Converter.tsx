@@ -82,7 +82,7 @@ const Converter = (): ReactElement<HTMLElement> => {
         case ExpressionTypes.Postfix:
           stackApp = new StackApplication(expression, settings);
           stackApp.conversion();
-          setResult(stackApp.toPrefix());
+          setResult(stackApp.toPostfix());
           setStatements(stackApp.getStatements());
           break;
         default:
