@@ -4,8 +4,12 @@ import ExpressionContext from "../contexts/ExpressionContext";
 import ExpressionTypes from "../../libs/src/enums/ExpressionTypes";
 
 const Select = (): ReactElement<HTMLSelectElement> => {
-  const { handleSelect }: DefaultValue =
-    useContext<DefaultValue>(ExpressionContext as Context<DefaultValue>);
+  const { handleSelect }: DefaultValue = useContext<DefaultValue>(
+    ExpressionContext as Context<DefaultValue>
+  );
+  const selecteType: ExpressionTypes = localStorage.getItem(
+    "type"
+  ) as ExpressionTypes;
 
   return (
     <select
@@ -13,13 +17,17 @@ const Select = (): ReactElement<HTMLSelectElement> => {
       onChange={handleSelect}
       required
     >
-      <option value={ExpressionTypes.Prefix} className="capitalize">
+      <option
+        value={ExpressionTypes.Prefix}
+        className="capitalize"
+        selected={selecteType === ExpressionTypes.Prefix}
+      >
         Prefix Expression
       </option>
       <option
         value={ExpressionTypes.Postfix}
-        selected
         className="capitalize"
+        selected={selecteType === ExpressionTypes.Postfix}
       >
         Postfix Expression
       </option>

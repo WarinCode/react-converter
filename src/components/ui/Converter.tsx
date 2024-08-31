@@ -9,11 +9,7 @@ import {
   MutableRefObject,
 } from "react";
 import StackApplication from "../../libs/src/classes/StackApplication";
-import {
-  AppSettings,
-  ToPostfix,
-  ToPrefix,
-} from "../../libs/src/types";
+import { AppSettings, ToPostfix, ToPrefix } from "../../libs/src/types";
 import ExpressionTypes from "../../libs/src/enums/ExpressionTypes";
 import ExpressionContext from "../contexts/ExpressionContext";
 import FormContainer from "../containers/FormContainer";
@@ -35,10 +31,11 @@ const Converter = (): ReactElement<HTMLElement> => {
   const inputRef = useRef() as MutableRefObject<HTMLInputElement>;
 
   useEffect((): void => {
+    setType(localStorage.getItem("type") as ExpressionTypes);
     for (let i: number = 0; i < localStorage.length; i++) {
       setSettings((prev: AppSettings): AppSettings => {
         const key: keyof AppSettings = localStorage.key(i) as keyof AppSettings;
-        prev[key] = localStorage.getItem(key) === "true";        
+        prev[key] = localStorage.getItem(key) === "true";
         return prev;
       });
     }
@@ -51,19 +48,20 @@ const Converter = (): ReactElement<HTMLElement> => {
   }, [expression, type]);
 
   const handleChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>): void => {
+    ({ target:{ value }}: ChangeEvent<HTMLInputElement>): void => {
       if (settings.enableCapitalize) {
-        setExpression(e.target.value.toUpperCase());
+        setExpression(value.toUpperCase());
       } else {
-        setExpression(e.target.value);
+        setExpression(value);
       }
     },
     [expression]
   );
 
   const handleSelect = useCallback(
-    (e: ChangeEvent<HTMLSelectElement>): void => {
-      setType(e.target.value as ExpressionTypes);
+    ({ target: { value } }: ChangeEvent<HTMLSelectElement>): void => {
+      setType(value as ExpressionTypes);
+      localStorage.setItem("type", value);
     },
     [type]
   );

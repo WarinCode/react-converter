@@ -1,10 +1,14 @@
 import { ReactElement, useEffect } from "react";
 import AppContainer from "./components/containers/AppContainer";
 import Converter from "./components/ui/Converter";
+import ExpressionTypes from "./libs/src/enums/ExpressionTypes";
 
 const App = (): ReactElement<HTMLDivElement> => {
 
   useEffect((): void => {
+    if(localStorage.getItem("type") === null){
+      localStorage.setItem("type", ExpressionTypes.Postfix);
+    }
     const keys: string[] = ["enableIndentation", "enableSeparator", "enableCapitalize"];
     for(const key of keys){
       if(localStorage.getItem(key) === null){
