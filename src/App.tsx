@@ -18,7 +18,7 @@ const App = (): ReactElement<HTMLDivElement> => {
   }, []);
 
   return (
-    <AppContainer attributes={{ className: "w-full h-full p-12 bg-zinc-100" }}>
+    <AppContainer attributes={{ className: "w-full h-full p-12 max-lg:p-8 bg-zinc-100" }}>
       <Converter />
     </AppContainer>
   );

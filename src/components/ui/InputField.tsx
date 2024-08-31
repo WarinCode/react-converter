@@ -15,7 +15,7 @@ const InputField = (): ReactElement => {
         ป้อนนิพจน์ Infix:{" "}
       </label>
       <input
-        className={`w-3/5 h-12 block mx-auto outline-none caret-blue-400 border border-gray-400 rounded-full text-center tracking-widest placeholder:p-2 placeholder:text-center placeholder:capitalize ${
+        className={`w-3/5 max-[580px]:w-full h-12 block mx-auto outline-none caret-blue-400 border border-gray-400 rounded-full text-center tracking-widest placeholder:p-2 placeholder:text-center placeholder:capitalize ${
           settings.enableCapitalize ? "uppercase" : "lowercase"
         }`}
         type="text"

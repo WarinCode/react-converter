@@ -16,9 +16,9 @@ const ExpressionTable = (): ReactElement<HTMLTableElement> => {
   return (
     <table className="border-2 border-black w-full h-max mt-16">
       <thead className="border-y-2 bg-black border-black text-slate-50 h-16">
-        <th>Input <span className="text-yellow-300">(Infix)</span></th>
-        <th className="border-x-2 border-black">Operator Stack</th>
-        <th>
+        <th className=" max-sm:text-sm">Input <span className="text-yellow-300">(Infix)</span></th>
+        <th className="border-x-2 border-black max-sm:text-sm">Operator Stack</th>
+        <th className="max-sm:text-sm">
           Output <span className="text-yellow-300">({type === ExpressionTypes.Postfix ? "Postfix" : "Prefix"})</span>
         </th>
       </thead>

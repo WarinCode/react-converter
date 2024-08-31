@@ -130,12 +130,12 @@ const Converter = (): ReactElement<HTMLElement> => {
         id="converter"
         className="w-full flex flex-col items-center justify-center"
       >
-        <div className="w-full flex gap-8">
+        <div className="w-full flex max-[950px]:flex-wrap gap-8">
           <FormContainer
             attributes={{
               action: "#",
               className:
-                "w-3/4 h-max flex flex-col justify-center items-center bg-gradient-to-r from-blue-800 to-blue-300 p-12 rounded-xl shadow-xl border-8 border-white",
+                "w-3/4 max-[950px]:w-full h-max flex flex-col justify-center items-center bg-gradient-to-r from-blue-800 to-blue-300 py-12 rounded-xl shadow-xl border-8 border-white",
               onSubmit: handleSubmit,
             }}
           >
@@ -144,7 +144,7 @@ const Converter = (): ReactElement<HTMLElement> => {
           <SettingContainer
             attributes={{
               className:
-                "w-1/4 p-4 flex flex-col items-start justify-center bg-gradient-to-r from-black to-neutral-900 rounded-xl border-8 border-white shadow-xl text-slate-50",
+                "w-1/4 max-[950px]:w-full max-[950px]:mt-12 p-4 flex flex-col items-start justify-center bg-gradient-to-r from-black to-neutral-900 rounded-xl border-8 border-white shadow-xl text-slate-50",
             }}
           >
             <SelectContainer
@@ -153,9 +153,6 @@ const Converter = (): ReactElement<HTMLElement> => {
               }}
             >
               <Paragraph
-                attributes={{
-                  className: "text-slate-50 text-center italic mb-4",
-                }}
               />
               <Select />
             </SelectContainer>

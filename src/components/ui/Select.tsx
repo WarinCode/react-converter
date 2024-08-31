@@ -19,14 +19,14 @@ const Select = (): ReactElement<HTMLSelectElement> => {
     >
       <option
         value={ExpressionTypes.Prefix}
-        className="capitalize"
+        className="capitalize max-sm:text-base"
         selected={selecteType === ExpressionTypes.Prefix}
       >
         Prefix Expression
       </option>
       <option
         value={ExpressionTypes.Postfix}
-        className="capitalize"
+        className="capitalize max-sm:text-base"
         selected={selecteType === ExpressionTypes.Postfix}
       >
         Postfix Expression
