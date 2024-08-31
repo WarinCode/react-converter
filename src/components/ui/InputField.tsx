@@ -23,7 +23,7 @@ const InputField = (): ReactElement => {
         placeholder="Infix expression"
         onChange={handleChange}
         minLength={3}
-        maxLength={50}
+        maxLength={40}
         autoComplete="off"
         autoCorrect="off"
         autoSave="off"

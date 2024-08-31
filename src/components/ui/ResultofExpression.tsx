@@ -20,12 +20,12 @@ const ResultofExpression: FC<ResultofExpressionProps<HTMLDivElement>> = ({
           ยังไม่มีผลลัพธ์ใดๆ
         </h2>
       ) : (
-        <span className="translate-y-2">
+        <div className="max-xl:mt-4">
           แปลงเป็นนิพจน์ {type} ได้คือ:
-          <p className="text-5xl max-xl:text-xl text-bold tracking-wide">
+          <p className="text-5xl max-xl:text-xl text-bold tracking-wide text-ellipsis overflow-hidden">
             {result}
           </p>
-        </span>
+        </div>
       )}
     </div>
   );

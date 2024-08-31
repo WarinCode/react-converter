@@ -54,7 +54,7 @@ const Checkbox: FC<CheckboxProps> = ({
       />
       <label
         htmlFor={id}
-        className="select-none hover:cursor-pointer flex-grow ms-2 indent-1 transition-colors delay-75 hover:text-green-700"
+        className="select-none hover:cursor-pointer flex-grow ms-2 indent-1 transition-colors delay-75 hover:text-green-700 max-md:text-base max-sm:text-sm"
       >
         {text}
       </label>

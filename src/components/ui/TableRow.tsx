@@ -1,5 +1,6 @@
 import { ReactElement, FC } from "react";
 import { TableRowProps } from "../../types/props";
+import TdContent from "./TdContent";
 
 const TableRow: FC<TableRowProps<HTMLTableRowElement>> = ({
   attributes,
@@ -7,31 +8,17 @@ const TableRow: FC<TableRowProps<HTMLTableRowElement>> = ({
 }): ReactElement<HTMLTableRowElement> => {
   return (
     <tr {...attributes} className="text-center border-2 border-black h-12">
-      <td>
-        {statement.infix === null ? (
-          <span className="text-pink-600 capitalize">null</span>
-        ) : (
-          statement.infix
-        )}
+      <td className="text-base">
+        <TdContent content={statement.infix} />
       </td>
-      <td className="border-x-2 border-black">
-        {statement.operatorStack === null ? (
-          <span className="text-pink-600 capitalize">null</span>
-        ) : (
-          statement.operatorStack
-        )}
+      <td className="border-x-2 border-black text-base">
+        <TdContent content={statement.operatorStack} />
       </td>
-      <td>
+      <td className="text-base">
         {"prefix" in statement ? (
-          statement.prefix === null ? (
-            <span className="text-pink-600 capitalize">null</span>
-          ) : (
-            statement.prefix
-          )
-        ) : statement.postfix === null ? (
-          <span className="text-pink-600 capitalize">null</span>
+          <TdContent content={statement.prefix} />
         ) : (
-          statement.postfix
+          <TdContent content={statement.postfix} />
         )}
       </td>
     </tr>

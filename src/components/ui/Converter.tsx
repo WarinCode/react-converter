@@ -15,6 +15,7 @@ import ExpressionContext from "../contexts/ExpressionContext";
 import FormContainer from "../containers/FormContainer";
 import SelectContainer from "../containers/SelectContainer";
 import SettingContainer from "../containers/SettingContainer";
+import TableContainer from "../containers/TableContainer";
 import Form from "./Form";
 import ResultofExpression from "./ResultofExpression";
 import ExpressionTable from "./ExpressionTable";
@@ -48,7 +49,7 @@ const Converter = (): ReactElement<HTMLElement> => {
   }, [expression, type]);
 
   const handleChange = useCallback(
-    ({ target:{ value }}: ChangeEvent<HTMLInputElement>): void => {
+    ({ target: { value } }: ChangeEvent<HTMLInputElement>): void => {
       if (settings.enableCapitalize) {
         setExpression(value.toUpperCase());
       } else {
@@ -135,7 +136,7 @@ const Converter = (): ReactElement<HTMLElement> => {
             attributes={{
               action: "#",
               className:
-                "w-3/4 max-[950px]:w-full h-max flex flex-col justify-center items-center bg-gradient-to-r from-blue-800 to-blue-300 py-12 rounded-xl shadow-xl border-8 border-white",
+                "w-3/4 max-[950px]:w-full max-[580px]:px-4 h-max flex flex-col justify-center items-center bg-gradient-to-r from-blue-800 to-blue-300 py-12 rounded-xl shadow-xl border-8 border-white",
               onSubmit: handleSubmit,
             }}
           >
@@ -152,15 +153,23 @@ const Converter = (): ReactElement<HTMLElement> => {
                 className: "mb-5 w-full block mx-auto text-black",
               }}
             >
-              <Paragraph
-              />
+              <Paragraph />
               <Select />
             </SelectContainer>
             <Checkboxes />
           </SettingContainer>
         </div>
         <ResultofExpression />
-        <ExpressionTable />
+        <TableContainer
+          attributes={{
+            className: "border-2 border-black w-full h-max mt-16",
+          }}
+        >
+          <ExpressionTable />
+          <caption className="text-2xl font-bold mb-4">
+            ตารางการแปลงนิพจน์
+          </caption>
+        </TableContainer>
       </section>
     </ExpressionContext.Provider>
   );
