@@ -162,7 +162,7 @@ const Converter = (): ReactElement<HTMLElement> => {
         <ResultofExpression />
         <TableContainer
           attributes={{
-            className: "border-2 border-black w-full h-max mt-16",
+            className: "border-2 border-black w-full h-max mt-16 table-auto",
           }}
         >
           <ExpressionTable />
