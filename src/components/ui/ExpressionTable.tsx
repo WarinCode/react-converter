@@ -16,14 +16,14 @@ const ExpressionTable = (): ReactElement<HTMLElement> => {
   }
   return (
     <>
-      <thead className="border-y-2 bg-black border-black text-slate-50 h-16">
-        <th className="max-sm:text-sm text-wrap">
+      <thead className="border-y-2 bg-black border-black text-slate-50 h-16 max-sm:text-sm">
+        <th>
           Input <span className="text-yellow-300">(Infix)</span>
         </th>
-        <th className="border-x-2 border-black max-sm:text-sm text-wrap">
+        <th className="border-x-2 border-black">
           Operator Stack
         </th>
-        <th className="max-sm:text-sm text-wrap">
+        <th>
           Output{" "}
           <span className="text-yellow-300">
             ({type === ExpressionTypes.Postfix ? "Postfix" : "Prefix"})
@@ -40,9 +40,9 @@ const ExpressionTable = (): ReactElement<HTMLElement> => {
         )}
       </tbody>
       <tfoot className="h-12 bg-black">
-        <tr className="text-center text-slate-50">
-          <td className="max-sm:text-sm text-wrap">ผลลัพธ์คือ: </td>
-          <td className="max-sm:text-sm text-wrap font-bold" colSpan={2}>
+        <tr className="text-center text-slate-50 max-sm:text-sm">
+          <td>ผลลัพธ์คือ: </td>
+          <td className="font-bold" colSpan={2}>
             {result}
           </td>
         </tr>

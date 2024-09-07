@@ -22,6 +22,8 @@ import ExpressionTable from "./ExpressionTable";
 import Checkboxes from "./Checkboxes";
 import Select from "./Select";
 import Paragraph from "./Paragraph";
+import Footer from "./Footer";
+import { GrTable } from "react-icons/gr";
 
 const Converter = (): ReactElement<HTMLElement> => {
   const [expression, setExpression] = useState<string>("");
@@ -129,7 +131,7 @@ const Converter = (): ReactElement<HTMLElement> => {
     >
       <section
         id="converter"
-        className="w-full flex flex-col items-center justify-center"
+        className="w-full flex flex-col items-center justify-center relative"
       >
         <div className="w-full flex max-[950px]:flex-wrap gap-8">
           <FormContainer
@@ -162,14 +164,16 @@ const Converter = (): ReactElement<HTMLElement> => {
         <ResultofExpression />
         <TableContainer
           attributes={{
-            className: "border-2 border-black w-full h-max mt-16 table-auto",
+            className: "border-2 border-black w-full h-max mt-16 table-auto mb-20",
           }}
         >
           <ExpressionTable />
-          <caption className="text-2xl font-bold mb-4">
-            ตารางการแปลงนิพจน์
+          <caption className="text-2xl font-bold mb-6 ">
+            <GrTable className="inline -translate-y-0.5"/>
+            <span className="ms-2">ตารางการแปลงนิพจน์</span>
           </caption>
         </TableContainer>
+        <Footer/>
       </section>
     </ExpressionContext.Provider>
   );
